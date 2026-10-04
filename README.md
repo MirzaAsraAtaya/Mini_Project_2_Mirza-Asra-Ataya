@@ -135,7 +135,7 @@ Pada program ini saya menggunakan try-except untuk menangani kesalahan input dar
 
 Library yang saya pakai
 
-Saya menggunakan beberapa library Python untuk menambahkan fungsi pada program. Library pwinput digunakan pada halaman login untuk menyembunyikan password ketika diketik. Kemudian PrettyTable digunakan untuk membuat tampilan data peminjaman menjadi lebih rapi dalam bentuk tabel. Saya juga menggunakan os untuk membersihkan tampilan terminal ketika berpindah halaman atau menu.
+Saya menggunakan tiga library Python untuk menambahkan fungsi pada program. Library pwinput digunakan pada halaman login untuk menyembunyikan password ketika diketik. Kemudian PrettyTable digunakan untuk membuat tampilan data peminjaman menjadi lebih rapi dalam bentuk tabel. Saya juga menggunakan os untuk membersihkan tampilan terminal ketika berpindah halaman atau menu.
 
 
 
