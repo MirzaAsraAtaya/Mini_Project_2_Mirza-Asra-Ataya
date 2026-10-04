@@ -28,4 +28,4 @@ Saat menambah peminjaman, program melakukan pengecekan ID agar tidak terjadi ID 
 
 Pada proses perubahan dan pembatalan, program terlebih dahulu mencari ID peminjaman. Jika pengguna memiliki role user, program juga melakukan pengecekan kepemilikan data (ID). Setelah proses selesai, pengguna dapat kembali menggunakan menu atau melakukan logout.
 
-Jika pengguna melakukan logout, program akan kembali ke halaman login. Program akan terus berjalan sampai pengguna memilih menu keluar dari halaman login.
+Nah yang terakhir, Jika pengguna melakukan logout, program akan kembali ke halaman login. Program akan terus berjalan sampai pengguna memilih menu keluar dari halaman login.
