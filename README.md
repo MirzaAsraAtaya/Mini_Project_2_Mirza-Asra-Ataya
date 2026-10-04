@@ -42,9 +42,7 @@ Halaman Login User
 
 Halaman Login Admin
 
-Halaman login digunakan untuk masuk ke dalam sistem. Pengguna memasukkan username dan password yang sudah terdaftar. Password diketik menggunakan library pwinput jadi passwordnya akan terlihat seperti bintang bintang (hidden). Setelah login berhasil, program akan menentukan role pengguna dan menampilkan menu yang sesuai.
-
-Dari tampilan, admin dan user memang memiliki menu yang saya, tetapi sebenarnya admin memiliki akses yang lebih luas daripada user. Admin memiliki akses untuk melihat, menambah, mengubah, dan membatalkan seluruh data peminjaman ruangan, sedangkan user hanya memiliki akses untuk melihat, menambah, mengubah, dan membatalkan data peminjaman ruangan miliknya sendiri.
+Setelah program dijalankan, program akan menampilkan halaman login. Pada bagian ini pengguna harus memasukkan username dan password yang sudah tersedia di dalam Dictionary. Password menggunakan library pwinput, sehingga password yang diketik tidak ditampilkan secara langsung. Jika username dan password benar, program akan membaca role dari pengguna tersebut dan menampilkan menu sesuai dengan role yang dimiliki. Pada program ini terdapat dua jenis role, yaitu admin dan user. Admin memiliki akses penuh untuk melihat, menambah, mengubah, dan membatalkan seluruh data peminjaman. Sedangkan user juga dapat menggunakan menu yang sama, tetapi user hanya dapat mengubah dan membatalkan data peminjaman yang dibuat oleh dirinya sendiri.
 
 # Menu (1) Lihat Jadwal Peminjaman
 
@@ -56,7 +54,7 @@ Output ketika belum ada jadwal peminjaman
 
 Output ketika sudah ada jadwal peminjaman
 
-Data peminjaman ditampilkan dalam bentuk tabel menggunakan library PrettyTable. Informasi yang ditampilkan terdiri dari ID, Nama, Ruangan, Tanggal, Waktu. Jika belum terdapat data peminjaman, program akan menampilkan pesan bahwa belum ada data peminjaman.
+Menu pertama digunakan untuk melihat data peminjaman ruangan yang sudah tersimpan. Pada menu ini saya menggunakan library PrettyTable untuk membuat tampilan data peminjaman menjadi lebih rapi dalam bentuk tabel. Data yang ditampilkan terdiri dari ID, nama, kode ruangan, tanggal, dan waktu peminjaman. Jika belum terdapat data peminjaman, program akan menampilkan pesan bahwa belum ada data peminjaman. Jika sudah terdapat data, maka seluruh data peminjaman akan ditampilkan dalam bentuk tabel.
 
 # Menu (2) Tambah Peminjaman Ruangan
 
@@ -76,13 +74,9 @@ Output ketika user ingin mengubah data tapi ternyata jadwalnya bentrok/sudah ada
 
 Output ketika ruangan yang dipilih di luar dari ruangan yang disediakan (berlaku untuk menu 3 juga)
 
-Menu tambah peminjaman digunakan untuk memasukkan data peminjaman baru. Program akan melakukan beberapa pengecekan sebelum data disimpan, yaitu:
+Menu kedua digunakan untuk menambahkan data peminjaman ruangan baru. Mekanismenya masih kurang lebih sama seperti pada Mini Project 1, tetapi pada Mini Project 2 terdapat beberapa validasi tambahan. Program akan meminta pengguna untuk memasukkan ID, ruangan, tanggal, dan waktu peminjaman. Setelah itu program akan melakukan beberapa pengecekan, yaitu mengecek apakah ID sudah digunakan, mengecek apakah kode ruangan tersedia, dan mengecek apakah ruangan dan jadwal yang dipilih mengalami bentrok dengan data peminjaman yang sudah ada.
 
-- Memeriksa apakah ID sudah digunakan.
-- Memeriksa apakah ruangan tersedia.
-- Memeriksa apakah jadwal yang dipilih mengalami bentrok dengan peminjaman lain.
-
-Jika semua pengecekan berhasil, data akan disimpan ke dalam list peminjaman. Kalau gagal, maka user akan menginput ulang data yang ada.
+Jika ID sudah digunakan, pengguna akan diminta untuk memasukkan ID yang berbeda. Jika ruangan tidak tersedia atau jadwalnya bentrok, pengguna juga akan diminta untuk memilih kembali. Jika semua data sudah sesuai, data peminjaman akan dimasukkan ke dalam list peminjaman.
 
 # Menu (3) Ubah Peminjaman
 
@@ -102,7 +96,8 @@ Output ketika admin mengubah data user (mirza)
 
 Output ketika user ingin mengubah data tapi ternyata ID-nya salah/tidak ditemukan (berlaku untuk menu 4 juga)
 
-Menu ubah peminjaman digunakan untuk mengubah ruangan, tanggal, dan waktu dari data peminjaman. Admin dapat mengubah data peminjaman apa saja, sedangkan user hanya dapat mengubah peminjaman yang menggunakan username miliknya. Program juga akan melakukan pengecekan jadwal agar data yang baru tidak bertabrakan dengan peminjaman lain.
+Menu ketiga digunakan untuk mengubah data peminjaman yang sudah ada. Pada menu ini saya menggunakan Function ubah_peminjaman() untuk menjalankan proses perubahan data.
+Program akan meminta pengguna memasukkan ID peminjaman yang ingin diubah. Setelah ID ditemukan, program akan mengecek role pengguna. Jika yang login adalah admin, maka admin dapat mengubah data peminjaman siapa saja. Sedangkan jika yang login adalah user, program akan mengecek apakah data tersebut merupakan milik user yang sedang login. Setelah data berhasil ditemukan dan pengguna memiliki hak akses, pengguna dapat memasukkan ruangan, tanggal, dan waktu yang baru. Program kemudian akan melakukan pengecekan kembali untuk memastikan data baru tidak mengalami bentrok dengan peminjaman lain.
 
 # Menu (4) Batalkan Peminjaman
 
@@ -118,7 +113,7 @@ Output ketika user (ataya) membatalkan data user lain (mirza)
 
 Output ketika admin membatalkan data user (mirza)
 
-Menu batalkan peminjaman digunakan untuk menghapus data peminjaman berdasarkan ID. Admin dapat membatalkan peminjaman apa saja, sedangkan user hanya dapat membatalkan peminjaman miliknya sendiri, data yang berhasil dibatalkan akan dihapus dari list peminjaman.
+Menu keempat digunakan untuk membatalkan atau menghapus data peminjaman. Pada menu ini saya menggunakan Function batalkan_peminjaman() untuk menjalankan proses pembatalan data. Pengguna terlebih dahulu memasukkan ID peminjaman yang ingin dibatalkan. Program kemudian mencari ID tersebut di dalam list peminjaman. Jika ID tidak ditemukan, program akan menampilkan pesan bahwa data tidak ditemukan. Untuk admin, data peminjaman apa saja dapat dibatalkan. Sedangkan untuk user, program akan mengecek terlebih dahulu apakah data tersebut merupakan miliknya. Jika data sesuai dengan hak akses pengguna, data tersebut akan dihapus dari list peminjaman.
 
 # Menu (5) Logout
 
@@ -126,9 +121,24 @@ Menu batalkan peminjaman digunakan untuk menghapus data peminjaman berdasarkan I
 
 Output ketika logout (berlaku buat role admin juga)
 
-program akan kembali ke halaman login dan akan selesai jika pengguna keluar dari program.
+Menu kelima digunakan untuk melakukan logout dari akun yang sedang digunakan. Ketika pengguna memilih menu logout, perulangan menu berdasarkan role akan dihentikan dan program akan kembali ke halaman login, jadinyaa pengguna lain dapat melakukan login menggunakan akun yang berbeda dan program akan terus berjalan sampai pengguna memilih menu keluar pada halaman login.
 
 # Penerapan Nilai Tambah
+
+<img width="430" height="333" alt="gambar" src="https://github.com/user-attachments/assets/da624b73-837a-443b-a4e7-4b6951aa8e47" />
+
+Output ketika pengguna bukannya ngetik angka malah ngetik kata "Login"
+
+Pada program ini saya menggunakan try-except untuk menangani kesalahan input dari pengguna. Contohnya ketika pengguna memasukkan pilihan menu yang seharusnya berupa angka (1/2), tetapi pengguna memasukkan huruf atau input yang tidak sesuai (Login/Keluar). Dengan adanya try-except, program tidak langsung berhenti karena error (ValueError), tetapi akan menampilkan pesan bahwa input yang dimasukkan salah dan pengguna dapat mencoba kembali.
+
+<img width="660" height="77" alt="Screenshot 2026-10-04 223132" src="https://github.com/user-attachments/assets/b08bf9b0-e088-435c-bdea-51e36d37337c" />
+
+Library yang saya pakai
+
+Saya menggunakan beberapa library Python untuk menambahkan fungsi pada program. Library pwinput digunakan pada halaman login untuk menyembunyikan password ketika diketik. Kemudian PrettyTable digunakan untuk membuat tampilan data peminjaman menjadi lebih rapi dalam bentuk tabel. Saya juga menggunakan os untuk membersihkan tampilan terminal ketika berpindah halaman atau menu.
+
+
+
 
 
 
