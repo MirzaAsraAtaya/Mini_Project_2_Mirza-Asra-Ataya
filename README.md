@@ -29,3 +29,92 @@ Saat menambah peminjaman, program melakukan pengecekan ID agar tidak terjadi ID 
 Pada proses perubahan dan pembatalan, program terlebih dahulu mencari ID peminjaman. Jika pengguna memiliki role user, program juga melakukan pengecekan kepemilikan data (ID). Setelah proses selesai, pengguna dapat kembali menggunakan menu atau melakukan logout.
 
 Nah yang terakhir, Jika pengguna melakukan logout, program akan kembali ke halaman login. Program akan terus berjalan sampai pengguna memilih menu keluar dari halaman login.
+
+# 3. Dokumentasi Program & Output
+
+# Halaman Login + Menu (Admin & User)
+
+<img width="432" height="402" alt="Screenshot 2026-10-04 204146" src="https://github.com/user-attachments/assets/933e8a0d-2ed9-488c-8151-0c08c4ebd2b8" />
+
+Halaman Login User
+
+
+
+<img width="428" height="387" alt="Screenshot 2026-10-04 204452" src="https://github.com/user-attachments/assets/083ca00a-9797-4a9e-a2fc-7a92163cd9c4" />
+
+Halaman Login Admin
+
+
+# Menu (1) Lihat Jadwal Peminjaman
+
+<img width="297" height="247" alt="Screenshot 2026-10-04 205455" src="https://github.com/user-attachments/assets/5799f9cc-81b5-469a-a287-47f84013e5d5" />
+
+Output ketika belum ada jadwal peminjaman
+
+
+<img width="352" height="207" alt="Screenshot 2026-10-04 211941" src="https://github.com/user-attachments/assets/32c2684d-1274-4514-9dc6-43a36cd4593c" />
+
+Output ketika sudah ada jadwal peminjaman
+
+
+# Menu (2) Tambah Peminjaman Ruangan
+
+<img width="513" height="637" alt="Screenshot 2026-10-04 204740" src="https://github.com/user-attachments/assets/59bec2e0-4aa3-4a59-8573-c25a180ba62c" />
+
+Output ketika melakukan peminjaman ruangan (Berlaku buat role admin juga)
+
+<img width="407" height="280" alt="Screenshot 2026-10-04 212111" src="https://github.com/user-attachments/assets/f0b0d730-2578-4260-8d01-75d9cfd3ff1b" />
+
+Output ketika ingin menambahkan ruang tapi ternyata ID-nya sudah digunakan
+
+# Menu (3) Ubah Peminjaman
+
+<img width="521" height="357" alt="Screenshot 2026-10-04 205839" src="https://github.com/user-attachments/assets/8a402343-fdbc-4556-bbca-b1335c0fa2a9" />
+
+Output ketika user (mirza) mengubah datanya sendiri
+
+<img width="397" height="290" alt="Screenshot 2026-10-04 205900" src="https://github.com/user-attachments/assets/a2e601fc-8c23-40c7-9634-d99d1b123984" />
+
+Output ketika user (ataya) mengubah data user lain (mirza)
+
+<img width="517" height="356" alt="Screenshot 2026-10-04 210159" src="https://github.com/user-attachments/assets/09f28ae7-abc5-48f0-87b8-359345f72594" />
+
+Output ketika admin mengubah data user (mirza)
+
+<img width="512" height="192" alt="Screenshot 2026-10-04 212429" src="https://github.com/user-attachments/assets/8bb2d276-6393-4aa7-81be-606ae3b5802c" />
+
+Output ketika user ingin mengubah data tapi ternyata jadwalnya bentrok/sudah ada yang makai
+
+<img width="340" height="103" alt="Screenshot 2026-10-04 212730" src="https://github.com/user-attachments/assets/62dca955-5a5d-416c-815a-ced2564d4b2c" />
+
+Output ketika user ingin mengubah data tapi ternyata ID-nya salah/tidak ditemukan (berlaku untuk menu 4 juga)
+
+# Menu (4) Batalkan Peminjaman
+
+<img width="371" height="265" alt="Screenshot 2026-10-04 210826" src="https://github.com/user-attachments/assets/5c018360-28c8-467d-a396-ce96f8d2a992" />
+
+Output ketika user (mirza) membatalkan datanya sendiri
+
+<img width="413" height="267" alt="Screenshot 2026-10-04 210904" src="https://github.com/user-attachments/assets/99c29a2c-3e02-48fb-8217-a57d7168e44c" />
+
+Output ketika user (ataya) membatalkan data user lain (mirza)
+
+<img width="368" height="262" alt="Screenshot 2026-10-04 210927" src="https://github.com/user-attachments/assets/bef7a782-f61e-4497-82c3-7a17958cfaf7" />
+
+Output ketika admin membatalkan data user (mirza)
+
+# Menu (5) Logout
+
+<img width="433" height="352" alt="Screenshot 2026-10-04 211252" src="https://github.com/user-attachments/assets/c7396789-b94f-4086-9861-e046366826de" />
+
+Output ketika logout (berlaku buat role admin juga)
+
+
+
+
+
+
+
+
+
+
