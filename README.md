@@ -38,12 +38,13 @@ Nah yang terakhir, Jika pengguna melakukan logout, program akan kembali ke halam
 
 Halaman Login User
 
-
-
 <img width="428" height="387" alt="Screenshot 2026-10-04 204452" src="https://github.com/user-attachments/assets/083ca00a-9797-4a9e-a2fc-7a92163cd9c4" />
 
 Halaman Login Admin
 
+Halaman login digunakan untuk masuk ke dalam sistem. Pengguna memasukkan username dan password yang sudah terdaftar. Password diketik menggunakan library pwinput jadi passwordnya akan terlihat seperti bintang bintang (hidden). Setelah login berhasil, program akan menentukan role pengguna dan menampilkan menu yang sesuai.
+
+Dari tampilan, admin dan user memang memiliki menu yang saya, tetapi sebenarnya admin memiliki akses yang lebih luas daripada user. Admin memiliki akses untuk melihat, menambah, mengubah, dan membatalkan seluruh data peminjaman ruangan, sedangkan user hanya memiliki akses untuk melihat, menambah, mengubah, dan membatalkan data peminjaman ruangan miliknya sendiri.
 
 # Menu (1) Lihat Jadwal Peminjaman
 
@@ -51,11 +52,11 @@ Halaman Login Admin
 
 Output ketika belum ada jadwal peminjaman
 
-
 <img width="352" height="207" alt="Screenshot 2026-10-04 211941" src="https://github.com/user-attachments/assets/32c2684d-1274-4514-9dc6-43a36cd4593c" />
 
 Output ketika sudah ada jadwal peminjaman
 
+Data peminjaman ditampilkan dalam bentuk tabel menggunakan library PrettyTable. Informasi yang ditampilkan terdiri dari ID, Nama, Ruangan, Tanggal, Waktu. Jika belum terdapat data peminjaman, program akan menampilkan pesan bahwa belum ada data peminjaman.
 
 # Menu (2) Tambah Peminjaman Ruangan
 
@@ -66,6 +67,22 @@ Output ketika melakukan peminjaman ruangan (Berlaku buat role admin juga)
 <img width="407" height="280" alt="Screenshot 2026-10-04 212111" src="https://github.com/user-attachments/assets/f0b0d730-2578-4260-8d01-75d9cfd3ff1b" />
 
 Output ketika ingin menambahkan ruang tapi ternyata ID-nya sudah digunakan
+
+<img width="512" height="192" alt="Screenshot 2026-10-04 212429" src="https://github.com/user-attachments/assets/8bb2d276-6393-4aa7-81be-606ae3b5802c" />
+
+Output ketika user ingin mengubah data tapi ternyata jadwalnya bentrok/sudah ada yang makai (berlaku untuk menu 3 juga)
+
+<img width="462" height="126" alt="Screenshot 2026-10-04 214118" src="https://github.com/user-attachments/assets/4da895ca-0597-42a6-9ed1-b50539df88bf" />
+
+Output ketika ruangan yang dipilih di luar dari ruangan yang disediakan (berlaku untuk menu 3 juga)
+
+Menu tambah peminjaman digunakan untuk memasukkan data peminjaman baru. Program akan melakukan beberapa pengecekan sebelum data disimpan, yaitu:
+
+- Memeriksa apakah ID sudah digunakan.
+- Memeriksa apakah ruangan tersedia.
+- Memeriksa apakah jadwal yang dipilih mengalami bentrok dengan peminjaman lain.
+
+Jika semua pengecekan berhasil, data akan disimpan ke dalam list peminjaman. Kalau gagal, maka user akan menginput ulang data yang ada.
 
 # Menu (3) Ubah Peminjaman
 
@@ -81,13 +98,11 @@ Output ketika user (ataya) mengubah data user lain (mirza)
 
 Output ketika admin mengubah data user (mirza)
 
-<img width="512" height="192" alt="Screenshot 2026-10-04 212429" src="https://github.com/user-attachments/assets/8bb2d276-6393-4aa7-81be-606ae3b5802c" />
-
-Output ketika user ingin mengubah data tapi ternyata jadwalnya bentrok/sudah ada yang makai
-
 <img width="340" height="103" alt="Screenshot 2026-10-04 212730" src="https://github.com/user-attachments/assets/62dca955-5a5d-416c-815a-ced2564d4b2c" />
 
 Output ketika user ingin mengubah data tapi ternyata ID-nya salah/tidak ditemukan (berlaku untuk menu 4 juga)
+
+Menu ubah peminjaman digunakan untuk mengubah ruangan, tanggal, dan waktu dari data peminjaman. Admin dapat mengubah data peminjaman apa saja, sedangkan user hanya dapat mengubah peminjaman yang menggunakan username miliknya. Program juga akan melakukan pengecekan jadwal agar data yang baru tidak bertabrakan dengan peminjaman lain.
 
 # Menu (4) Batalkan Peminjaman
 
@@ -103,11 +118,20 @@ Output ketika user (ataya) membatalkan data user lain (mirza)
 
 Output ketika admin membatalkan data user (mirza)
 
+Menu batalkan peminjaman digunakan untuk menghapus data peminjaman berdasarkan ID. Admin dapat membatalkan peminjaman apa saja, sedangkan user hanya dapat membatalkan peminjaman miliknya sendiri, data yang berhasil dibatalkan akan dihapus dari list peminjaman.
+
 # Menu (5) Logout
 
 <img width="433" height="352" alt="Screenshot 2026-10-04 211252" src="https://github.com/user-attachments/assets/c7396789-b94f-4086-9861-e046366826de" />
 
 Output ketika logout (berlaku buat role admin juga)
+
+program akan kembali ke halaman login dan akan selesai jika pengguna keluar dari program.
+
+# Penerapan Nilai Tambah
+
+
+
 
 
 
