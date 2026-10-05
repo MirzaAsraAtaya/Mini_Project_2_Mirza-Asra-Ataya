@@ -1,4 +1,4 @@
-# Mini_Project_2_Mirza-Asra-Ataya
+# Minpro-2-DDP-SistemPeminjamanRuanganFTUNMUL
 
 Nama: Mirza Asra Ataya 
 
