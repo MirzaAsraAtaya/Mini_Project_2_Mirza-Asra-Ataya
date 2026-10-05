@@ -42,6 +42,10 @@ Halaman Login User
 
 Halaman Login Admin
 
+<img width="426" height="192" alt="Screenshot 2026-10-05 201534" src="https://github.com/user-attachments/assets/4920dadf-a9df-4c03-8201-c00995bf9d02" />
+
+Halaman Login ketika nama user tidak ditemukan
+
 Setelah program dijalankan, program akan menampilkan halaman login. Pada bagian ini pengguna harus memasukkan username dan password yang sudah tersedia di dalam Dictionary. Password menggunakan library pwinput, sehingga password yang diketik tidak ditampilkan secara langsung. Jika username dan password benar, program akan membaca role dari pengguna tersebut dan menampilkan menu sesuai dengan role yang dimiliki. Pada program ini terdapat dua jenis role, yaitu admin dan user. Admin memiliki akses penuh untuk melihat, menambah, mengubah, dan membatalkan seluruh data peminjaman. Sedangkan user juga dapat menggunakan menu yang sama, tetapi user hanya dapat mengubah dan membatalkan data peminjaman yang dibuat oleh dirinya sendiri.
 
 # Menu (1) Lihat Jadwal Peminjaman
